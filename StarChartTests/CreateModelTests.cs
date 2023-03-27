@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Linq;
+using StarChart.Models;
 using Xunit;
 
 namespace StarChartTests
@@ -22,6 +23,8 @@ namespace StarChartTests
         [Fact(DisplayName = "Add Id Property @add-id-property")]
         public void AddIdPropertyTest()
         {
+            _ = new CelestialObject();
+            
             var filePath = ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + ".." + Path.DirectorySeparatorChar + "StarChart" + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "CelestialObject.cs";
             Assert.True(File.Exists(filePath), "`CelestialObject.cs` was not found in the `Models` directory.");
 
